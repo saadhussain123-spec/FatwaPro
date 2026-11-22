@@ -1,0 +1,6 @@
+{
+  "name": "Al-Mizan Islamic Research",
+  "description": "Scholarly Islamic fatwa and primary-source research engine searching IslamQA.info and web archives, grounded in the Qur'an and authentic Hadith.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,68 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, Cambria, "Times New Roman", serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Amiri", "Traditional Arabic", "Scheherazade New", serif;
+  --font-urdu: "Noto Naskh Arabic", "Amiri", "Jameel Noori Nastaleeq", serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, .font-editorial {
+    font-family: var(--font-serif);
+  }
+}
+
+.font-arabic {
+  font-family: var(--font-arabic);
+  line-height: 2.05;
+}
+
+.font-urdu,
+[dir="rtl"] {
+  font-family: var(--font-urdu);
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] .font-editorial {
+  font-family: var(--font-urdu);
+}
+
+.drop-cap::first-letter {
+  font-family: var(--font-serif);
+  font-size: 3.15rem;
+  font-weight: 600;
+  line-height: 0.85;
+  float: left;
+  margin-right: 0.65rem;
+  margin-top: 0.25rem;
+  color: #14532D;
+}
+
+[dir="rtl"] .drop-cap::first-letter {
+  font-family: var(--font-urdu);
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  float: none;
+  margin: 0;
+  color: inherit;
+}
+
+.dark .drop-cap::first-letter {
+  color: #86EFAC;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
